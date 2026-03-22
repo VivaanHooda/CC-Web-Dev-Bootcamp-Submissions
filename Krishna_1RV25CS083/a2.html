@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="a2.css">
+    <title>To-Do List App</title>
+
+</head>
+<body style="
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREqRp5pzb59rEoOn3Z53TmEPbqzHvqf3wj5g&s);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+">
+
+  <div class="container">
+
+    <header>
+      <h1>To-Do List</h1>
+      
+    </header>
+
+    <section class="profile">
+      
+      <h3>Krishna Kaushal</h3>
+      <p>First-year engineering student who loves building simple web apps.</p>
+    </section>
+
+    <section>
+      <input type="text" id="taskInput" placeholder="Enter a task">
+      <button onclick="addTask()">Add</button>
+    </section>
+
+    <section>
+      <ul id="taskList"></ul>
+    </section>
+
+    <footer>
+      <small>Built using HTML, CSS, and JavaScript</small>
+    </footer>
+
+  </div>
+<script src="a2.js"></script>
+
+</body>
+</html>
