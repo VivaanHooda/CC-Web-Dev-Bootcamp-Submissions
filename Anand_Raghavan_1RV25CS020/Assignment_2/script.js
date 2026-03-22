@@ -1,51 +1,47 @@
-const input = document.getElementById('task-input');
-  const list = document.getElementById('task-list');
-  const emptyMsg = document.getElementById('empty-msg');
+var input = document.getElementById('task-input');
+var list = document.getElementById('task-list');
+var emptyMsg = document.getElementById('empty-msg');
 
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') addTask();
+input.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') addTask();
+});
+
+function addTask() {
+  var text = input.value.trim();
+  if (text === '') return;
+
+  emptyMsg.style.display = 'none';
+
+  var li = document.createElement('li');
+
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.style.marginRight = '10px';
+  checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+      li.classList.add('done');
+    } else {
+      li.classList.remove('done');
+    }
   });
 
-  function addTask() {
-    const text = input.value.trim();
-    if (!text) return;
+  var span = document.createElement('span');
+  span.textContent = text;
 
-    emptyMsg.style.display = 'none';
+  var deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'X';
+  deleteBtn.className = 'delete-btn';
+  deleteBtn.addEventListener('click', function() {
+    li.remove();
+    if (list.querySelectorAll('li:not(.empty)').length === 0) {
+      emptyMsg.style.display = 'block';
+    }
+  });
 
-    const li = document.createElement('li');
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
 
-    const left = document.createElement('div');
-    left.className = 'task-left';
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.addEventListener('change', function() {
-      if (checkbox.checked) {
-        li.classList.add('done');
-      } else {
-        li.classList.remove('done');
-      }
-    });
-
-    const span = document.createElement('span');
-    span.textContent = text;
-
-    left.appendChild(checkbox);
-    left.appendChild(span);
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '✕';
-    deleteBtn.className = 'delete-btn';
-    deleteBtn.addEventListener('click', function() {
-      li.remove();
-      if (list.querySelectorAll('li:not(.empty)').length === 0) {
-        emptyMsg.style.display = 'block';
-      }
-    });
-
-    li.appendChild(left);
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
-
-    input.value = '';
-  }
+  input.value = '';
+}

@@ -1,40 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>To-Do List</title>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
 
   <h1>My To-Do List</h1>
-  <p class="subtitle">Keep track of your tasks for the day.</p>
 
-  <div class="tags">
-    <span class="tag">Productivity</span>
-    <span class="tag blue">Task Manager</span>
-  </div>
-
-  <div class="input-row">
-    <input type="text" id="task-input" placeholder="Add a new task..." />
-    <button onclick="addTask()">Add</button>
-  </div>
+  <input type="text" id="task-input" placeholder="Type a task...">
+  <button onclick="addTask()">Add</button>
 
   <ul id="task-list">
     <li class="empty" id="empty-msg">No tasks yet. Add one above!</li>
   </ul>
 
-  <div class="profile">
-    <div class="avatar">😊</div>
-    <div class="profile-text">
-      <h3>Anand Raghavan</h3>
-   
-    </div>
-  </div>
+  <br>
+  <p>😊 Made by Anand Raghavan</p>
 
-</div>
-
+  <script src="script.js"></script>
 </body>
 </html>
