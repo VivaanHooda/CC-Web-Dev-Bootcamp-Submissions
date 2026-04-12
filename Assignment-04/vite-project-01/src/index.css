@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,100,200..800&display=swap');
+@import "tailwindcss";
+
+.bricolage-grotesque-f{
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+html,body{
+  height: screen;
+  width: screen;
+  background-color: #161b2e;
+  color: white;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+
+.bricolage-grotesque-f {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
